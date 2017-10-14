@@ -1,0 +1,42 @@
+<html>
+<title>Easy Kahoot!</title>
+<div id="game">
+	<img src="./instructions.gif" width="100%">
+	Quiz ID (copied from the url of the actual game site): <input id="id">
+	<button onclick="load()">Submit</button>
+</div>
+<div id="play">
+	<iframe src="https://kahoot.it" width="100%" height="100%"></iframe>
+</div>
+<br>
+<footer>&copy; 2017 Grayson Martin</footer>
+<style>
+
+	#game {
+		height: 99vh;
+		width: 70vw;
+		float: left;
+	}
+
+	#play {
+		height: 99vh;
+		width: 25vw;
+		float: right;
+	}
+
+	iframe {
+		width: 100%;
+		height: 100%;
+	}
+
+	footer {
+		clear: both;
+	}
+
+</style>
+<script type="text/javascript">
+	function load() {
+		document.getElementById('game').innerHTML = "<iframe src=\"https://play.kahoot.it/#/?quizId=" + document.getElementById('id').value + "\" width=\"100%\" height=\"100%\">"
+	}
+</script>
+</html>
